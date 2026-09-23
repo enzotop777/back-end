@@ -1,0 +1,28 @@
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $nome = $_POST["nome"];
+        $idade = $_POST["idade"];
+        $servico = $_POST["servico"];
+
+        echo "<h2>Resultado do Agendamento</h2>";
+        echo "Cliente: " . $nome . "<br>";
+        echo "Idade: " . $idade . " anos<br>";
+
+        if ($servico == "Corte") {
+            echo "Serviço: Corte<br>";
+            echo "Valor: R$ 30,00";
+        } 
+        elseif ($servico == "Barba") {
+            echo "Serviço: Barba<br>";
+            echo "Valor: R$ 20,00";
+        } 
+        elseif ($servico == "Corte + Barba") {
+            echo "Serviço: Corte + Barba<br>";
+            echo "Valor: R$ 45,00";
+        } 
+        else {
+            echo "Serviço não encontrado.";
+        }
+    }
+    ?>
